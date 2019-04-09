@@ -22,6 +22,7 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
+      <parameter key="TmdbSymfonyBundle">Tmdb\SymfonyBundle\TmdbSymfonyBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +76,10 @@
       <parameter key="WebServerBundle" type="collection">
         <parameter key="path">/home/titi/Rendu/symfony_project/symfony_project/vendor/symfony/web-server-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
+      </parameter>
+      <parameter key="TmdbSymfonyBundle" type="collection">
+        <parameter key="path">/home/titi/Rendu/symfony_project/symfony_project/vendor/php-tmdb/symfony</parameter>
+        <parameter key="namespace">Tmdb\SymfonyBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -289,6 +294,54 @@
       </parameter>
     </parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
+    <parameter key="tmdb.api_key">d972dbfa37295cd09b02b8019dbd7c70</parameter>
+    <parameter key="tmdb.client.class">Tmdb\Client</parameter>
+    <parameter key="tmdb.client_configuration.class">Tmdb\SymfonyBundle\ClientConfiguration</parameter>
+    <parameter key="tmdb.api_token.class">Tmdb\ApiToken</parameter>
+    <parameter key="tmdb.request_token.class">Tmdb\RequestToken</parameter>
+    <parameter key="tmdb.session_token.class">Tmdb\SessionToken</parameter>
+    <parameter key="tmdb.authentication_repository.class">Tmdb\Repository\AuthenticationRepository</parameter>
+    <parameter key="tmdb.account_repository.class">Tmdb\Repository\AccountRepository</parameter>
+    <parameter key="tmdb.certification_repository.class">Tmdb\Repository\CertificationRepository</parameter>
+    <parameter key="tmdb.changes_repository.class">Tmdb\Repository\ChangesRepository</parameter>
+    <parameter key="tmdb.collection_repository.class">Tmdb\Repository\CollectionRepository</parameter>
+    <parameter key="tmdb.company_repository.class">Tmdb\Repository\CompanyRepository</parameter>
+    <parameter key="tmdb.configuration_repository.class">Tmdb\Repository\ConfigurationRepository</parameter>
+    <parameter key="tmdb.credits_repository.class">Tmdb\Repository\CreditsRepository</parameter>
+    <parameter key="tmdb.discover_repository.class">Tmdb\Repository\DiscoverRepository</parameter>
+    <parameter key="tmdb.find_repository.class">Tmdb\Repository\FindRepository</parameter>
+    <parameter key="tmdb.genre_repository.class">Tmdb\Repository\GenreRepository</parameter>
+    <parameter key="tmdb.jobs_repository.class">Tmdb\Repository\JobsRepository</parameter>
+    <parameter key="tmdb.keyword_repository.class">Tmdb\Repository\KeywordRepository</parameter>
+    <parameter key="tmdb.list_repository.class">Tmdb\Repository\ListRepository</parameter>
+    <parameter key="tmdb.movie_repository.class">Tmdb\Repository\MovieRepository</parameter>
+    <parameter key="tmdb.network_repository.class">Tmdb\Repository\NetworkRepository</parameter>
+    <parameter key="tmdb.people_repository.class">Tmdb\Repository\PeopleRepository</parameter>
+    <parameter key="tmdb.review_repository.class">Tmdb\Repository\ReviewRepository</parameter>
+    <parameter key="tmdb.search_repository.class">Tmdb\Repository\SearchRepository</parameter>
+    <parameter key="tmdb.tv_repository.class">Tmdb\Repository\TvRepository</parameter>
+    <parameter key="tmdb.tv_episode_repository.class">Tmdb\Repository\TvEpisodeRepository</parameter>
+    <parameter key="tmdb.tv_season_repository.class">Tmdb\Repository\TvSeasonRepository</parameter>
+    <parameter key="tmdb.twig.image_extension.class">Tmdb\SymfonyBundle\Twig\TmdbExtension</parameter>
+    <parameter key="tmdb.options" type="collection">
+      <parameter key="adapter">null</parameter>
+      <parameter key="secure">true</parameter>
+      <parameter key="host">api.themoviedb.org/3/</parameter>
+      <parameter key="session_token">null</parameter>
+      <parameter key="cache" type="collection">
+        <parameter key="enabled">true</parameter>
+        <parameter key="path">/home/titi/Rendu/symfony_project/symfony_project/var/cache/dev/themoviedb</parameter>
+        <parameter key="handler">null</parameter>
+        <parameter key="subscriber">null</parameter>
+      </parameter>
+      <parameter key="log" type="collection">
+        <parameter key="enabled">false</parameter>
+        <parameter key="path">/home/titi/Rendu/symfony_project/symfony_project/var/log/themoviedb.log</parameter>
+        <parameter key="level">DEBUG</parameter>
+        <parameter key="handler">null</parameter>
+        <parameter key="subscriber">null</parameter>
+      </parameter>
+    </parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -384,6 +437,20 @@
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/home/titi/Rendu/symfony_project/symfony_project/var/log/dev.log</argument>
+    </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\HomeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\MovieController" class="App\Controller\MovieController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\MovieController"/>
+      </call>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -1929,14 +1996,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -3682,6 +3741,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="tmdb.twig.image_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -4251,6 +4313,90 @@
         <argument>server:log</argument>
       </call>
     </service>
+    <service id="tmdb.client" class="Tmdb\Client" public="true">
+      <argument type="service" id="tmdb.api_token"/>
+      <argument type="service" id="tmdb.configuration"/>
+    </service>
+    <service id="tmdb.api_token" class="Tmdb\ApiToken" public="false">
+      <argument>d972dbfa37295cd09b02b8019dbd7c70</argument>
+    </service>
+    <service id="tmdb.configuration" class="Tmdb\SymfonyBundle\ClientConfiguration" public="false">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument>%tmdb.options%</argument>
+      <call method="setCacheHandler">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="tmdb.certification_repository" class="Tmdb\Repository\CertificationRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.changes_repository" class="Tmdb\Repository\ChangesRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.collection_repository" class="Tmdb\Repository\CollectionRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.company_repository" class="Tmdb\Repository\CompanyRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.configuration_repository" class="Tmdb\Repository\ConfigurationRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.credits_repository" class="Tmdb\Repository\CreditsRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.discover_repository" class="Tmdb\Repository\DiscoverRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.find_repository" class="Tmdb\Repository\FindRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.genre_repository" class="Tmdb\Repository\GenreRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.jobs_repository" class="Tmdb\Repository\JobsRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.keyword_repository" class="Tmdb\Repository\KeywordRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.list_repository" class="Tmdb\Repository\ListRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.movie_repository" class="Tmdb\Repository\MovieRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.network_repository" class="Tmdb\Repository\NetworkRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.people_repository" class="Tmdb\Repository\PeopleRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.review_repository" class="Tmdb\Repository\ReviewRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.search_repository" class="Tmdb\Repository\SearchRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.tv_repository" class="Tmdb\Repository\TvRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.tv_season_repository" class="Tmdb\Repository\TvSeasonRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.tv_episode_repository" class="Tmdb\Repository\TvEpisodeRepository" public="true">
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id="tmdb.twig.image_extension" class="Tmdb\SymfonyBundle\Twig\TmdbExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="tmdb.client"/>
+    </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MovieController" class="App\Controller\MovieController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MovieController" class="App\Controller\MovieController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MovieController" class="App\Controller\MovieController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -4654,6 +4800,35 @@
         <argument key="security.authorization_checker" type="service" id="security.authorization_checker"/>
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
+    </service>
+    <service id=".service_locator.KTVqfp6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore"/>
+        <argument key="form.factory" type="service" id="form.factory" on-invalid="ignore"/>
+        <argument key="http_kernel" type="service" id="http_kernel" on-invalid="ignore"/>
+        <argument key="parameter_bag" type="service" id="parameter_bag" on-invalid="ignore"/>
+        <argument key="request_stack" type="service" id="request_stack" on-invalid="ignore"/>
+        <argument key="router" type="service" id="router.default" on-invalid="ignore"/>
+        <argument key="security.authorization_checker" type="service" id="security.authorization_checker" on-invalid="ignore"/>
+        <argument key="security.csrf.token_manager" type="service" id="security.csrf.token_manager" on-invalid="ignore"/>
+        <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore"/>
+        <argument key="serializer" type="service" id="serializer" on-invalid="ignore"/>
+        <argument key="session" type="service" id="session" on-invalid="ignore"/>
+        <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\MovieController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MovieController"/>
+      <argument>App\Controller\MovieController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
     <service id=".service_locator._pu.0Tb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
