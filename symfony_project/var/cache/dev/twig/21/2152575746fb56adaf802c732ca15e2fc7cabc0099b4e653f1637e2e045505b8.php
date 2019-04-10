@@ -82,7 +82,7 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
                         <div class=\"card-body\">
                             <h4 class=\"card-title\">";
             // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "original_title", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "title", []), "html", null, true);
             echo "</h4>
                             <h6>";
             // line 15
@@ -94,7 +94,7 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
             echo "/10</h5>
                             <p class=\"card-text\">";
             // line 17
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "overview", []), 0, 60), "html", null, true);
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "overview", []), 0, 100), "html", null, true);
             echo "...</p>
                         </div>
                         <a href=\"\" class=\"btn btn-primary\">See more</a>
@@ -150,10 +150,10 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
                     <div class=\"card border-dark h-150 mt-3\">
                         <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/w185{{ top.poster_path }}\" alt=\"\">
                         <div class=\"card-body\">
-                            <h4 class=\"card-title\">{{ top.original_title }}</h4>
+                            <h4 class=\"card-title\">{{ top.title }}</h4>
                             <h6>{{ top.release_date|date(\"d/m/Y\") }}</h6>
                             <h5 class=\"rating\">Note : {{ top.vote_average }}/10</h5>
-                            <p class=\"card-text\">{{ top.overview | slice(0,60)}}...</p>
+                            <p class=\"card-text\">{{ top.overview | slice(0,100)}}...</p>
                         </div>
                         <a href=\"\" class=\"btn btn-primary\">See more</a>
                     </div>

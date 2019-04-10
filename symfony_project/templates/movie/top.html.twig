@@ -11,7 +11,7 @@
                     <div class="card border-dark h-150 mt-3">
                         <img class="card-img-top" src="http://image.tmdb.org/t/p/w185{{ top.poster_path }}" alt="">
                         <div class="card-body">
-                            <h4 class="card-title">{{ top.original_title }}</h4>
+                            <h4 class="card-title">{{ top.title }}</h4>
                             <h6>{{ top.release_date|date("d/m/Y") }}</h6>
                             <h5 class="rating">Note : {{ top.vote_average }}/10</h5>
                             <p class="card-text">{{ top.overview | slice(0,100)}}...</p>
