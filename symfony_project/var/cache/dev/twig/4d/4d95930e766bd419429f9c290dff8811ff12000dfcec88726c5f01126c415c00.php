@@ -94,9 +94,9 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
         foreach ($context['_seq'] as $context["_key"] => $context["upcome"]) {
             // line 11
             echo "
-                    <div class=\"col-sm-3 d-flex\">
+                    <div class=\"col-sm-3 col-lg-3 col-md-6 d-flex\">
                         <div class=\"card h-150 mt-3\">
-                            <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/w200";
+                            <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original";
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["upcome"], "poster_path", []), "html", null, true);
             echo "\" alt=\"\">
@@ -174,9 +174,9 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
 
             {% for upcome in upcoming.results %}
 
-                    <div class=\"col-sm-3 d-flex\">
+                    <div class=\"col-sm-3 col-lg-3 col-md-6 d-flex\">
                         <div class=\"card h-150 mt-3\">
-                            <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/w200{{ upcome.poster_path }}\" alt=\"\">
+                            <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original{{ upcome.poster_path }}\" alt=\"\">
                                 <div class=\"card-body\">
                                     <h4 class=\"card-title\" style=\"text-align: center;\">{{ upcome.title }}</h4>
                                     <h6 style=\"color: blue; text-align: center\">{{ upcome.release_date | date(\"d/m/Y\") }}</h6>
