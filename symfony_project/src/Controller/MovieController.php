@@ -75,11 +75,14 @@ class MovieController extends AbstractController
         $movie = $client->getMoviesApi()->getMovie($id, [
             'language' => 'fr'
         ]);
-
-        return $this->render('movie/show.html.twig',[
-            'movie' => $movie
+        $credits = $client->getMoviesApi()->getCredits($id, [
+            'language' => 'fr'
         ]);
 
+        dump($credits);
+        return $this->render('movie/show.html.twig',[
+            'movie' => $movie,
+            'credits' => $credits
+        ]);
     }
-
 }
