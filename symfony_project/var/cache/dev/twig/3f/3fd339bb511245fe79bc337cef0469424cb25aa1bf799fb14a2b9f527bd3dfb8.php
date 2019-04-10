@@ -63,11 +63,38 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
 
         // line 4
         echo "
-    ";
-        // line 5
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 5, $this->source); })()), "title", []), "html", null, true);
+<div class=\"container mt-3 ml-10\">
+        <h2>";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 6, $this->source); })()), "title", []), "html", null, true);
+        echo "</h2>
+        <img  src=\"http://image.tmdb.org/t/p/w1280";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 7, $this->source); })()), "backdrop_path", []), "html", null, true);
+        echo "\">
+        <h5>
+            ";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 9, $this->source); })()), "title", []), "html", null, true);
+        echo " <br>
+            Genres: ";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 10, $this->source); })()), "genres", []), 0, []), "name", []), "html", null, true);
+        echo "<br>
+            Date:";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 11, $this->source); })()), "release_date", []), "html", null, true);
         echo "
-
+        </h5>
+        <hr class=\"my-4\">
+        <p>";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 14, $this->source); })()), "overview", []), "html", null, true);
+        echo "</p>
+        
+    
+</div>
+    
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -89,7 +116,7 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
 
     public function getDebugInfo()
     {
-        return array (  68 => 5,  65 => 4,  56 => 3,  27 => 1,);
+        return array (  92 => 14,  86 => 11,  82 => 10,  78 => 9,  73 => 7,  69 => 6,  65 => 4,  56 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -98,8 +125,20 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
 
 {% block body %}
 
-    {{ movie.title }}
-
-{% endblock %}", "movie/show.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/movie/show.html.twig");
+<div class=\"container mt-3 ml-10\">
+        <h2>{{movie.title}}</h2>
+        <img  src=\"http://image.tmdb.org/t/p/w1280{{ movie.backdrop_path }}\">
+        <h5>
+            {{movie.title}} <br>
+            Genres: {{movie.genres.0.name}}<br>
+            Date:{{movie.release_date}}
+        </h5>
+        <hr class=\"my-4\">
+        <p>{{movie.overview}}</p>
+        
+    
+</div>
+    
+{% endblock %}", "movie/show.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/movie/show.html.twig");
     }
 }

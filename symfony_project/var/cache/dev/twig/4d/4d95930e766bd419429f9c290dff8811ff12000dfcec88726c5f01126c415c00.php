@@ -194,6 +194,6 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
         </div>
     </div>
     <br>
-{% endblock %}", "home/index.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/home/index.html.twig");
+{% endblock %}", "home/index.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/home/index.html.twig");
     }
 }

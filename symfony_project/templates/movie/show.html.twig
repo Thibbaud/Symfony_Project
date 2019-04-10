@@ -2,6 +2,18 @@
 
 {% block body %}
 
-    {{ movie.title }}
-
+<div class="container mt-3 ml-10">
+        <h2>{{movie.title}}</h2>
+        <img  src="http://image.tmdb.org/t/p/w1280{{ movie.backdrop_path }}">
+        <h5>
+            {{movie.title}} <br>
+            Genres: {{movie.genres.0.name}}<br>
+            Date:{{movie.release_date}}
+        </h5>
+        <hr class="my-4">
+        <p>{{movie.overview}}</p>
+        
+    
+</div>
+    
 {% endblock %}
