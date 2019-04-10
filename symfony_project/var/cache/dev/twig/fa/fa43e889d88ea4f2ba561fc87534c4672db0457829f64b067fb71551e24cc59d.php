@@ -83,8 +83,8 @@ class __TwigTemplate_d23cd9684f4639821e1cd9560668607343031225998c3db6fa4e1b8e058
         // line 6
         echo "
 
-    <div class=\"container mt-4\">
-        <h1>S'inscrire</h1>
+    <div class=\"container col-md-3 mt-4 border rounded\">
+        <h1>S'inscrire :</h1>
         ";
         // line 10
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 10, $this->source); })()), 'form_start');
@@ -105,7 +105,7 @@ class __TwigTemplate_d23cd9684f4639821e1cd9560668607343031225998c3db6fa4e1b8e058
         // line 14
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "Confirm_password", []), 'row', ["attr" => ["placeholder" => "Votre mot de passe"]]);
         echo "
-        <button class=\"btn btn-primary\">Register</button>
+        <button class=\"btn btn-primary mb-3\">Register</button>
 
         ";
         // line 17
@@ -146,14 +146,14 @@ class __TwigTemplate_d23cd9684f4639821e1cd9560668607343031225998c3db6fa4e1b8e058
 {% block body %}
 
 
-    <div class=\"container mt-4\">
-        <h1>S'inscrire</h1>
+    <div class=\"container col-md-3 mt-4 border rounded\">
+        <h1>S'inscrire :</h1>
         {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email, {attr: {'placeholder': 'Votre email'}}) }}
         {{ form_row(registrationForm.username, {attr: {'placeholder': 'Nom d\\'utilisateur'}}) }}
         {{ form_row(registrationForm.plainPassword, {attr: {'placeholder': 'Votre mot de passe'}}) }}
         {{ form_row(registrationForm.Confirm_password, {attr: {'placeholder': 'Votre mot de passe'}}) }}
-        <button class=\"btn btn-primary\">Register</button>
+        <button class=\"btn btn-primary mb-3\">Register</button>
 
         {{ form_end(registrationForm) }}
 

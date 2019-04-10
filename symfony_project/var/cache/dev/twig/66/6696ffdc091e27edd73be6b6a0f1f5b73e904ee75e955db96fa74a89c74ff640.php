@@ -81,7 +81,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container mt-4\">
+        echo "    <div class=\"container col-md-3 mt-4 border rounded mt-4\">
         <form method=\"post\">
             ";
         // line 8
@@ -94,14 +94,14 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
         }
         // line 11
         echo "
-            <h1 class=\"h3 mb-3 font-weight-normal\">Connexion :</h1>
+            <h1 class=\"h3 mb-3 font-weight-normal mt-3\">Se connecter :</h1>
             <label for=\"inputEmail\" class=\"sr-only\">Email</label>
             <input type=\"email\" value=\"";
         // line 14
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 14, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email\" required autofocus>
+        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-3\" placeholder=\"Email\" required autofocus>
             <label for=\"inputPassword\" class=\"sr-only\">Password</label>
-            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
+            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-3\" placeholder=\"Password\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                    value=\"";
@@ -113,7 +113,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
             ";
         // line 32
         echo "
-            <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            <button class=\"btn btn-lg btn-primary mb-3\" type=\"submit\">
                 Sign in
             </button>
         </form>
@@ -150,17 +150,17 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-    <div class=\"container mt-4\">
+    <div class=\"container col-md-3 mt-4 border rounded mt-4\">
         <form method=\"post\">
             {% if error %}
                 <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-            <h1 class=\"h3 mb-3 font-weight-normal\">Connexion :</h1>
+            <h1 class=\"h3 mb-3 font-weight-normal mt-3\">Se connecter :</h1>
             <label for=\"inputEmail\" class=\"sr-only\">Email</label>
-            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email\" required autofocus>
+            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-3\" placeholder=\"Email\" required autofocus>
             <label for=\"inputPassword\" class=\"sr-only\">Password</label>
-            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
+            <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-3\" placeholder=\"Password\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                    value=\"{{ csrf_token('authenticate') }}\"
@@ -177,7 +177,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
                 </div>
             #}
 
-            <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            <button class=\"btn btn-lg btn-primary mb-3\" type=\"submit\">
                 Sign in
             </button>
         </form>

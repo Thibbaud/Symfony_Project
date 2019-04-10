@@ -97,7 +97,10 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
             echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "overview", []), 0, 100), "html", null, true);
             echo "...</p>
                         </div>
-                        <a href=\"\" class=\"btn btn-primary\">See more</a>
+                        <a href=\"";
+            // line 19
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_movie", ["id" => twig_get_attribute($this->env, $this->source, $context["top"], "id", [])]), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Lire la suite</a>
                     </div>
                 </div>
 
@@ -132,7 +135,7 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
 
     public function getDebugInfo()
     {
-        return array (  110 => 24,  97 => 17,  93 => 16,  89 => 15,  85 => 14,  80 => 12,  75 => 9,  71 => 8,  65 => 4,  56 => 3,  27 => 1,);
+        return array (  113 => 24,  102 => 19,  97 => 17,  93 => 16,  89 => 15,  85 => 14,  80 => 12,  75 => 9,  71 => 8,  65 => 4,  56 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +158,7 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
                             <h5 class=\"rating\">Note : {{ top.vote_average }}/10</h5>
                             <p class=\"card-text\">{{ top.overview | slice(0,100)}}...</p>
                         </div>
-                        <a href=\"\" class=\"btn btn-primary\">See more</a>
+                        <a href=\"{{ path('show_movie', {'id': top.id } ) }}\" class=\"btn btn-primary\">Lire la suite</a>
                     </div>
                 </div>
 

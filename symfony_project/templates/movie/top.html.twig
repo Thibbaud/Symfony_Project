@@ -16,7 +16,7 @@
                             <h5 class="rating">Note : {{ top.vote_average }}/10</h5>
                             <p class="card-text">{{ top.overview | slice(0,100)}}...</p>
                         </div>
-                        <a href="" class="btn btn-primary">See more</a>
+                        <a href="{{ path('show_movie', {'id': top.id } ) }}" class="btn btn-primary">Lire la suite</a>
                     </div>
                 </div>
 
