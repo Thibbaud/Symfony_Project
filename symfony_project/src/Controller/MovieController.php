@@ -64,4 +64,19 @@ class MovieController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("movie/{id}", name="show_movie")
+     */
+    public function show($id){
+
+        $token = new ApiToken("d972dbfa37295cd09b02b8019dbd7c70");
+        $client = new Client($token);
+        $movie = $client->getMoviesApi()->getMovie($id);
+
+        return $this->render('movie/show.html.twig',[
+            'movie' => $movie
+        ]);
+
+    }
+
 }

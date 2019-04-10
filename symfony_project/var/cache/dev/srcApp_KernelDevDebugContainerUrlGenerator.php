@@ -36,6 +36,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'one' => [[], ['_controller' => 'App\\Controller\\MovieController::movie'], [], [['text', '/moviz']], [], []],
         'movie' => [[], ['_controller' => 'App\\Controller\\MovieController::index'], [], [['text', '/movie']], [], []],
         'bests' => [[], ['_controller' => 'App\\Controller\\MovieController::top'], [], [['text', '/top']], [], []],
+        'show_movie' => [['id'], ['_controller' => 'App\\Controller\\MovieController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/movie']], [], []],
         'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
         'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
         'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],

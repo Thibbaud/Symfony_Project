@@ -62,7 +62,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Log in!";
+        echo "Connexion";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -94,7 +94,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
         }
         // line 11
         echo "
-            <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+            <h1 class=\"h3 mb-3 font-weight-normal\">Connexion :</h1>
             <label for=\"inputEmail\" class=\"sr-only\">Email</label>
             <input type=\"email\" value=\"";
         // line 14
@@ -147,7 +147,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
     <div class=\"container mt-4\">
@@ -156,7 +156,7 @@ class __TwigTemplate_f867b13d08b8c28ea935aa66309e208f49d3a0db1e2c7eb0d2ba766f75d
                 <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-            <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+            <h1 class=\"h3 mb-3 font-weight-normal\">Connexion :</h1>
             <label for=\"inputEmail\" class=\"sr-only\">Email</label>
             <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email\" required autofocus>
             <label for=\"inputPassword\" class=\"sr-only\">Password</label>

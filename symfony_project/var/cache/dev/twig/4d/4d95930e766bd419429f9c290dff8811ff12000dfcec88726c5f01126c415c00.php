@@ -119,7 +119,10 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
             echo "/10</h5>
                                 </div>
                             <form action=\"\" method=\"post\">
-                                <a href=\"#\" class=\"btn btn-primary\">Lire la suite</a>
+                                <a href=\"";
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_movie", ["id" => twig_get_attribute($this->env, $this->source, $context["upcome"], "id", [])]), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Lire la suite</a>
                             </form>
                         </div>
                     </div>
@@ -155,7 +158,7 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
 
     public function getDebugInfo()
     {
-        return array (  133 => 28,  118 => 19,  114 => 18,  110 => 17,  106 => 16,  101 => 14,  96 => 11,  92 => 10,  84 => 4,  75 => 3,  57 => 2,  27 => 1,);
+        return array (  136 => 28,  124 => 22,  118 => 19,  114 => 18,  110 => 17,  106 => 16,  101 => 14,  96 => 11,  92 => 10,  84 => 4,  75 => 3,  57 => 2,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -181,7 +184,7 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
                                     <h5 class=\"rating\">Note : {{ upcome.vote_average }}/10</h5>
                                 </div>
                             <form action=\"\" method=\"post\">
-                                <a href=\"#\" class=\"btn btn-primary\">Lire la suite</a>
+                                <a href=\"{{ path('show_movie', {'id': upcome.id } ) }}\" class=\"btn btn-primary\">Lire la suite</a>
                             </form>
                         </div>
                     </div>

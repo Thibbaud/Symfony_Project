@@ -19,7 +19,7 @@
                                     <h5 class="rating">Note : {{ upcome.vote_average }}/10</h5>
                                 </div>
                             <form action="" method="post">
-                                <a href="#" class="btn btn-primary">Lire la suite</a>
+                                <a href="{{ path('show_movie', {'id': upcome.id } ) }}" class="btn btn-primary">Lire la suite</a>
                             </form>
                         </div>
                     </div>

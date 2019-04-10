@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerEgL52sq\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'EgL52sq',
-    'container.build_id' => 'dc64f7d2',
-    'container.build_time' => 1554900191,
+    'container.build_id' => '7a220a1f',
+    'container.build_time' => 1554903618,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerEgL52sq');
