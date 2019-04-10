@@ -57,26 +57,59 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
         // line 8
         echo "</head>
 <body>
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-    <a class=\"navbar-brand\" href=\"";
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary \">
+    <a class=\"navbar-brand my-lg-0\" href=\"";
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+    <button class=\"navbar-toggler \" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
 
-    <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
+    <div class=\"collapse navbar-collapse my-lg-0\" id=\"navbarColor01\">
         <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item active\">
+            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
         // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
         echo "\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Connexion</a>
+                <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
+        echo "\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
             </li>
+
+            ";
+        // line 25
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 26
+            echo "            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 27
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Déconnexion</a>
+            </li>
+                ";
+        } else {
+            // line 30
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 31
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">Inscription</a>
+                </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 34
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Connexion</a>
+            </li>
+            ";
+        }
+        // line 37
+        echo "
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
@@ -85,11 +118,11 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
     </div>
 </nav>
 ";
-        // line 31
+        // line 45
         $this->displayBlock('body', $context, $blocks);
-        // line 32
+        // line 46
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 33
+        // line 47
         echo "</body>
 </html>";
         
@@ -135,7 +168,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     }
 
-    // line 31
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -152,7 +185,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     }
 
-    // line 32
+    // line 46
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -181,7 +214,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     public function getDebugInfo()
     {
-        return array (  156 => 32,  139 => 31,  122 => 7,  104 => 5,  93 => 33,  91 => 32,  89 => 31,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  189 => 46,  172 => 45,  155 => 7,  137 => 5,  126 => 47,  124 => 46,  122 => 45,  112 => 37,  106 => 34,  100 => 31,  97 => 30,  91 => 27,  88 => 26,  86 => 25,  80 => 22,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -195,20 +228,34 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-    <a class=\"navbar-brand\" href=\"{{ path('home') }}\">Home</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary \">
+    <a class=\"navbar-brand my-lg-0\" href=\"{{ path('home') }}\">Home</a>
+    <button class=\"navbar-toggler \" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
 
-    <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
+    <div class=\"collapse navbar-collapse my-lg-0\" id=\"navbarColor01\">
         <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item active\">
+            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('bests') }}\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Connexion</a>
+                <a class=\"nav-link\" href=\"{{ path('bests') }}\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
             </li>
+
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+            </li>
+                {% else %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('app_register') }}\">Inscription</a>
+                </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
+            </li>
+            {% endif %}
+
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">

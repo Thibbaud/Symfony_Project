@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+
+    <div class="container mt-4">
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, {attr: {'placeholder': 'Votre email'}}) }}
+        {{ form_row(registrationForm.username, {attr: {'placeholder': 'Nom d\'utilisateur'}}) }}
+        {{ form_row(registrationForm.plainPassword, {attr: {'placeholder': 'Votre mot de passe'}}) }}
+        {{ form_row(registrationForm.Confirm_password, {attr: {'placeholder': 'Votre mot de passe'}}) }}
+        <button class="btn btn-success">Register</button>
+
+        {{ form_end(registrationForm) }}
+
+    </div>
+{% endblock %}
