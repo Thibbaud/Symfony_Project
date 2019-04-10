@@ -119,6 +119,7 @@ b7aca3,127.0.0.1,GET,http://localhost:8000/,1554904681,,200
 ac6664,127.0.0.1,GET,http://localhost:8000/,1554904899,,200
 fd595c,127.0.0.1,GET,http://localhost:8000/top,1554904902,,200
 7f4a8f,127.0.0.1,GET,http://localhost:8000/movie/19404,1554904904,,200
+<<<<<<< HEAD
 717a6b,127.0.0.1,GET,http://localhost:8000/,1554905171,,200
 094cd7,127.0.0.1,GET,http://localhost:8000/movie/166428,1554905189,,200
 d8c795,127.0.0.1,GET,http://localhost:8000/movie/166428,1554905792,,200
@@ -199,3 +200,38 @@ b4ce02,127.0.0.1,GET,http://localhost:8000/movie/522681,1554908802,9bf6e2,200
 65ff87,127.0.0.1,GET,http://localhost:8000/movie/522681,1554908832,,200
 805995,127.0.0.1,GET,http://localhost:8000/movie/522681,1554908855,,200
 7b2e52,127.0.0.1,GET,http://localhost:8000/movie/522681,1554908909,,200
+=======
+500c22,127.0.0.1,GET,http://localhost:8000/movie/19404,1554905038,,200
+b397e7,127.0.0.1,GET,http://localhost:8000/movie/19404,1554905045,,200
+896c79,127.0.0.1,GET,http://localhost:8000/,1554905049,,200
+237997,127.0.0.1,GET,http://localhost:8000/movie/166428,1554905051,,200
+45cece,127.0.0.1,GET,http://localhost:8000/top,1554905053,,200
+f00476,127.0.0.1,GET,http://localhost:8000/movie/19404,1554905054,,200
+14789d,127.0.0.1,GET,http://localhost:8000/movie/278,1554905060,,200
+de3f5b,127.0.0.1,GET,http://localhost:8000/top,1554905110,,200
+f97165,127.0.0.1,GET,http://localhost:8000/top,1554905114,,200
+e0b804,127.0.0.1,GET,http://localhost:8000/top,1554905120,,200
+21945a,127.0.0.1,GET,http://localhost:8000/top,1554905124,,200
+a6839b,127.0.0.1,GET,http://localhost:8000/movie/19404,1554905127,,200
+7cba00,127.0.0.1,GET,http://localhost:8000/top,1554905209,,200
+d0c7ca,127.0.0.1,GET,http://localhost:8000/,1554905211,,200
+f49e14,127.0.0.1,GET,http://localhost:8000/movie/166428,1554905458,,200
+c6e89b,127.0.0.1,GET,http://localhost:8000/movie/166428,1554906236,,200
+ceabd4,127.0.0.1,GET,http://localhost:8000/,1554906378,,200
+97064e,127.0.0.1,GET,http://localhost:8000/,1554906382,,200
+91a452,127.0.0.1,GET,http://localhost:8000/,1554906393,,200
+011f70,127.0.0.1,GET,http://localhost:8000/,1554906398,,200
+57bfeb,127.0.0.1,GET,http://localhost:8000/,1554906532,,200
+b292a7,127.0.0.1,GET,http://localhost:8000/,1554907126,,200
+eb6291,127.0.0.1,GET,http://localhost:8000/,1554907155,,200
+a685a7,127.0.0.1,GET,http://localhost:8000/,1554907215,,200
+3899a1,127.0.0.1,GET,http://localhost:8000/,1554907232,,200
+13c2ba,127.0.0.1,GET,http://localhost:8000/movie/429197,1554907255,,200
+4f2bc3,127.0.0.1,GET,http://localhost:8000/,1554907274,,200
+f948b1,127.0.0.1,GET,http://localhost:8000/,1554907373,,200
+7af85b,127.0.0.1,GET,http://localhost:8000/movie/537915,1554909011,,200
+2c1894,127.0.0.1,GET,http://localhost:8000/,1554909037,,200
+b5a3a1,127.0.0.1,GET,http://localhost:8000/,1554909045,,200
+10b334,127.0.0.1,GET,http://localhost:8000/,1554909049,,200
+b9635f,127.0.0.1,GET,http://localhost:8000/movie/454294,1554909096,,200
+>>>>>>> 3d81c4ce43bae5a3b92235576a9e3a01fa51e5fe

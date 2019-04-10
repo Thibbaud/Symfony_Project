@@ -71,8 +71,14 @@ class MovieController extends AbstractController
 
         $token = new ApiToken("d972dbfa37295cd09b02b8019dbd7c70");
         $client = new Client($token);
+<<<<<<< HEAD
         $movie = $client->getMoviesApi()->getMovie($id);
         dump($movie);
+=======
+        $movie = $client->getMoviesApi()->getMovie($id, [
+            'language' => 'fr'
+        ]);
+>>>>>>> 3d81c4ce43bae5a3b92235576a9e3a01fa51e5fe
 
         return $this->render('movie/show.html.twig',[
             'movie' => $movie
