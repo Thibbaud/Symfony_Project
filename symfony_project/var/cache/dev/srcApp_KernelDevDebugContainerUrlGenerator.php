@@ -32,6 +32,9 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+        'account_show' => [['id'], ['_controller' => 'App\\Controller\\AccountController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/account']], [], []],
+        'account_edit' => [['id'], ['_controller' => 'App\\Controller\\AccountController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/account']], [], []],
+        'account_delete' => [['id'], ['_controller' => 'App\\Controller\\AccountController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/account']], [], []],
         'home' => [[], ['_controller' => 'App\\Controller\\HomeController::upcoming'], [], [['text', '/']], [], []],
         'search' => [[], ['_controller' => 'App\\Controller\\MovieController::search'], [], [['text', '/search']], [], []],
         'one' => [[], ['_controller' => 'App\\Controller\\MovieController::movie'], [], [['text', '/moviz']], [], []],
@@ -41,7 +44,12 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
         'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
         'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
-        'easyadmin' => [[], ['_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\EasyAdminController::indexAction'], [], [['text', '/admin/']], [], []],
+        'user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user/']], [], []],
+        'user_new' => [[], ['_controller' => 'App\\Controller\\UserController::new'], [], [['text', '/user/new']], [], []],
+        'user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+        'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+        'user_delete' => [['id'], ['_controller' => 'App\\Controller\\UserController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+        'easyadmin' => [[], ['_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\EasyAdminController::indexAction'], [], [['text', '/front/']], [], []],
     ];
         }
     }

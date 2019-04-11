@@ -14,9 +14,15 @@
             Genres: {{movie.genres.0.name}}<br>
             Date: {{movie.release_date  | date('d/m/Y')}}<br>
             Actors: {{credits.cast.0.name}}, {{credits.cast.1.name}}, {{credits.cast.2.name}}
+            <h5 class="rating" style="font-size: 35px">Note : {{ movie.vote_average }}/10</h5>
+
         </h5>
-        <hr class="my-4">
-        <p>{{movie.overview}}</p>
+    <img src="http://image.tmdb.org/t/p/w185{{credits.cast.0.profile_path}}" alt="">
+    <img src="http://image.tmdb.org/t/p/w185{{credits.cast.1.profile_path}}" alt="">
+    <img src="http://image.tmdb.org/t/p/w185{{credits.cast.2.profile_path}}" alt="">
+
+    <hr class="my-4">
+        <p style="font-weight: bold; font-size: large">{{movie.overview}}</p>
         {% if  trailers.youtube.0.source is defined %}
         <iframe width="1280" height="720"
             src="https://www.youtube.com/embed/{{trailers.youtube.0.source}}" allowfullscreen>

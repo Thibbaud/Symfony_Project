@@ -70,25 +70,25 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
         echo "\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"";
-        // line 18
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
-        echo "\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
-            </li>
         </ul>
         <ul class=\"form-inline navbar-nav mr-auto\">
             ";
-        // line 22
+        // line 19
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 23
+            // line 20
             echo "            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-            // line 24
+            // line 21
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Déconnexion</a>
+            echo "\" style=\"color: red;\">Déconnexion</a>
             </li>
-                ";
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", []), "id", [])]), "html", null, true);
+            echo "\">Profil</a>
+                </li>
+            ";
         } else {
             // line 27
             echo "                <li class=\"nav-item\">
@@ -101,15 +101,14 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
                 <a class=\"nav-link\" href=\"";
             // line 31
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">Connexion</a>
+            echo "\"  style=\"color: green;\" >Connexion</a>
             </li>
             ";
         }
         // line 34
-        echo "
-        </ul>
+        echo "        </ul>
         <form method=\"post\" action=\"";
-        // line 36
+        // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
         echo "\" class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" name=\"search\" type=\"text\" placeholder=\"Search\">
@@ -119,11 +118,11 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 </nav>
 
 ";
-        // line 43
+        // line 42
         $this->displayBlock('body', $context, $blocks);
-        // line 44
+        // line 43
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 45
+        // line 44
         echo "</body>
 
 </html>";
@@ -170,7 +169,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     }
 
-    // line 43
+    // line 42
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -187,7 +186,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     }
 
-    // line 44
+    // line 43
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -216,7 +215,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     public function getDebugInfo()
     {
-        return array (  191 => 44,  174 => 43,  157 => 7,  139 => 5,  127 => 45,  125 => 44,  123 => 43,  113 => 36,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  85 => 23,  83 => 22,  76 => 18,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  190 => 43,  173 => 42,  156 => 7,  138 => 5,  126 => 44,  124 => 43,  122 => 42,  112 => 35,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  82 => 21,  79 => 20,  77 => 19,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -237,24 +236,23 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('bests') }}\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('bests') }}\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
-            </li>
         </ul>
         <ul class=\"form-inline navbar-nav mr-auto\">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                <a class=\"nav-link\" href=\"{{ path('app_logout') }}\" style=\"color: red;\">Déconnexion</a>
             </li>
-                {% else %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('account_show', {'id': app.user.id}) }}\">Profil</a>
+                </li>
+            {% else %}
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"{{ path('app_register') }}\">Inscription</a>
                 </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
+                <a class=\"nav-link\" href=\"{{ path('app_login') }}\"  style=\"color: green;\" >Connexion</a>
             </li>
             {% endif %}
-
         </ul>
         <form method=\"post\" action=\"{{ path('search') }}\" class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" name=\"search\" type=\"text\" placeholder=\"Search\">

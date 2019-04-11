@@ -14,24 +14,23 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('bests') }}">Meilleurs films<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('bests') }}">Prochaines sorties<span class="sr-only">(current)</span></a>
-            </li>
         </ul>
         <ul class="form-inline navbar-nav mr-auto">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                <a class="nav-link" href="{{ path('app_logout') }}" style="color: red;">Déconnexion</a>
             </li>
-                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('account_show', {'id': app.user.id}) }}">Profil</a>
+                </li>
+            {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
                 </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                <a class="nav-link" href="{{ path('app_login') }}"  style="color: green;" >Connexion</a>
             </li>
             {% endif %}
-
         </ul>
         <form method="post" action="{{ path('search') }}" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">

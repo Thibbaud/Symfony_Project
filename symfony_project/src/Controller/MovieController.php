@@ -41,13 +41,18 @@ class MovieController extends AbstractController
                     $id[]=$value["id"];
                 };
             };
+
             $length=count($id);
             for($i=0;$i<$length;$i++){
-                $byactor[] = $client->getMoviesApi()->getMovie($id[$i]);
+                try {
+                    $byactor[] = $client->getMoviesApi()->getMovie($id[$i]);
+                }catch(\Exception $e){
+                    error_log($e->getMessage());
+                }
             }
-            print_r($byactor);
+            dump($byactor);
             return $this->render('movie/search.html.twig', [
-                'bytitle' => $bytitle["results"],
+                'bytitles' => $bytitle["results"],
                 'byactor' => $byactor
             ]);
         }
@@ -123,7 +128,8 @@ class MovieController extends AbstractController
             'language' => 'fr'
         ]);
         $trailers = $client->getMoviesApi()->getTrailers($id);
-       
+
+        dump($credits);
         dump($movie);
         return $this->render('movie/show.html.twig',[
             'movie' => $movie,

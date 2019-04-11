@@ -63,42 +63,43 @@ class __TwigTemplate_fb2ae8cf111e812c9a8a96bdb75747a57d7873093d552d128987b798275
 
         // line 4
         echo "
-    <div class=\"container mt-5\">
-        <div class=\"row mt-4 mb-5\">
+    <div class=\"container mt-5 text-center\">
+        <h1>Les Meilleurs Films de tous les Temps</h1>
 
+        <div class=\"row mt-4 mb-5\">
             ";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tops"]) || array_key_exists("tops", $context) ? $context["tops"] : (function () { throw new RuntimeError('Variable "tops" does not exist.', 8, $this->source); })()), "results", []));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tops"]) || array_key_exists("tops", $context) ? $context["tops"] : (function () { throw new RuntimeError('Variable "tops" does not exist.', 9, $this->source); })()), "results", []));
         foreach ($context['_seq'] as $context["_key"] => $context["top"]) {
-            // line 9
+            // line 10
             echo "
                 <div class=\"col-sm-3 d-flex col-lg-3 col-md-6 d-flex\">
                     <div class=\"card border-dark h-150 mt-3\">
                         <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "poster_path", []), "html", null, true);
             echo "\" alt=\"\">
                         <div class=\"card-body\">
                             <h4 class=\"card-title\">";
-            // line 14
+            // line 15
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "title", []), "html", null, true);
             echo "</h4>
                             <h6>";
-            // line 15
+            // line 16
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "release_date", []), "d/m/Y"), "html", null, true);
             echo "</h6>
                             <h5 class=\"rating\">Note : ";
-            // line 16
+            // line 17
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "vote_average", []), "html", null, true);
             echo "/10</h5>
                             <p class=\"card-text\">";
-            // line 17
+            // line 18
             echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "overview", []), 0, 100), "html", null, true);
             echo "...</p>
                         </div>
                         <a href=\"";
-            // line 19
+            // line 20
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_movie", ["id" => twig_get_attribute($this->env, $this->source, $context["top"], "id", [])]), "html", null, true);
             echo "\" class=\"btn btn-primary\">Lire la suite</a>
                     </div>
@@ -109,7 +110,7 @@ class __TwigTemplate_fb2ae8cf111e812c9a8a96bdb75747a57d7873093d552d128987b798275
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['top'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 25
         echo "
         </div>
     </div>
@@ -135,7 +136,7 @@ class __TwigTemplate_fb2ae8cf111e812c9a8a96bdb75747a57d7873093d552d128987b798275
 
     public function getDebugInfo()
     {
-        return array (  113 => 24,  102 => 19,  97 => 17,  93 => 16,  89 => 15,  85 => 14,  80 => 12,  75 => 9,  71 => 8,  65 => 4,  56 => 3,  27 => 1,);
+        return array (  114 => 25,  103 => 20,  98 => 18,  94 => 17,  90 => 16,  86 => 15,  81 => 13,  76 => 10,  72 => 9,  65 => 4,  56 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -144,9 +145,10 @@ class __TwigTemplate_fb2ae8cf111e812c9a8a96bdb75747a57d7873093d552d128987b798275
 
 {% block body %}
 
-    <div class=\"container mt-5\">
-        <div class=\"row mt-4 mb-5\">
+    <div class=\"container mt-5 text-center\">
+        <h1>Les Meilleurs Films de tous les Temps</h1>
 
+        <div class=\"row mt-4 mb-5\">
             {% for top in tops.results %}
 
                 <div class=\"col-sm-3 d-flex col-lg-3 col-md-6 d-flex\">

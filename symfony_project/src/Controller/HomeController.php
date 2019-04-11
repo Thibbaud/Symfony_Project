@@ -20,7 +20,8 @@ class HomeController extends AbstractController
         $client = new Client($token);
 
         $upcoming = $client->getMoviesApi()->getUpcoming([
-            'language' => 'fr'
+            'language' => 'fr',
+            'page' => 1
         ]);
         dump($upcoming);
 
