@@ -28,5 +28,18 @@ class HomeController extends AbstractController
             'upcoming' => $upcoming
         ]);
     }
+    /**
+     * @Route("search", name="search_movie")
+     */
+    public function search(){
+        $token = new ApiToken("d972dbfa37295cd09b02b8019dbd7c70");
+        $client = new Client($token);
+        
+        $result = $client->getSearchApi()->searchMovies();
+        //dump($result);
 
+        return $this->render('home/search.html.twig',[
+            'search' => $result,
+        ]);
+    }
 }
