@@ -64,37 +64,71 @@ class __TwigTemplate_6174ef9518d784f036546e71558b2275d8cca224df48e18b629222b807f
         // line 4
         echo "
 <div class=\"container mt-3 ml-10\">
-        <h2>";
+        <h2 style=\"color: rgb(167, 54, 54)\">";
         // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 6, $this->source); })()), "title", []), "html", null, true);
         echo "</h2>
-        <img  src=\"http://image.tmdb.org/t/p/w1280";
+    ";
         // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 7, $this->source); })()), "backdrop_path", []), "html", null, true);
-        echo "\">
-        <h5>
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 7, $this->source); })()), "backdrop_path", []))) {
+            // line 8
+            echo "        <img  src=\"http://image.tmdb.org/t/p/w1280";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 8, $this->source); })()), "backdrop_path", []), "html", null, true);
+            echo "\">
+    ";
+        } else {
+            // line 10
+            echo "    <img src=\"https://media.koreus.com/201801/maya-chat-drole-tete.jpg\" alt=\"\">
+    ";
+        }
+        // line 12
+        echo "        <h5>
             ";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 9, $this->source); })()), "title", []), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 13, $this->source); })()), "title", []), "html", null, true);
         echo " <br>
             Genres: ";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 10, $this->source); })()), "genres", []), 0, []), "name", []), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 14, $this->source); })()), "genres", []), 0, []), "name", []), "html", null, true);
         echo "<br>
-            Date:";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 11, $this->source); })()), "release_date", []), "html", null, true);
+            Date: ";
+        // line 15
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 15, $this->source); })()), "release_date", []), "d/m/Y"), "html", null, true);
+        echo "<br>
+            Actors: ";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 16, $this->source); })()), "cast", []), 0, []), "name", []), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 16, $this->source); })()), "cast", []), 1, []), "name", []), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 16, $this->source); })()), "cast", []), 2, []), "name", []), "html", null, true);
         echo "
         </h5>
         <hr class=\"my-4\">
         <p>";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 14, $this->source); })()), "overview", []), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 19, $this->source); })()), "overview", []), "html", null, true);
         echo "</p>
-        
-    
+        ";
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["trailers"] ?? null), "youtube", [], "any", false, true), 0, [], "any", false, true), "source", [], "any", true, true)) {
+            // line 21
+            echo "        <iframe width=\"1280\" height=\"720\"
+            src=\"https://www.youtube.com/embed/";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trailers"]) || array_key_exists("trailers", $context) ? $context["trailers"] : (function () { throw new RuntimeError('Variable "trailers" does not exist.', 22, $this->source); })()), "youtube", []), 0, []), "source", []), "html", null, true);
+            echo "\" allowfullscreen>
+        </iframe>
+    ";
+        } else {
+            // line 25
+            echo "    <p>No Trailer</p>
+    ";
+        }
+        // line 27
+        echo "    
 </div>
-    
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -116,7 +150,7 @@ class __TwigTemplate_6174ef9518d784f036546e71558b2275d8cca224df48e18b629222b807f
 
     public function getDebugInfo()
     {
-        return array (  92 => 14,  86 => 11,  82 => 10,  78 => 9,  73 => 7,  69 => 6,  65 => 4,  56 => 3,  27 => 1,);
+        return array (  129 => 27,  125 => 25,  119 => 22,  116 => 21,  114 => 20,  110 => 19,  100 => 16,  96 => 15,  92 => 14,  88 => 13,  85 => 12,  81 => 10,  75 => 8,  73 => 7,  69 => 6,  65 => 4,  56 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -126,19 +160,31 @@ class __TwigTemplate_6174ef9518d784f036546e71558b2275d8cca224df48e18b629222b807f
 {% block body %}
 
 <div class=\"container mt-3 ml-10\">
-        <h2>{{movie.title}}</h2>
+        <h2 style=\"color: rgb(167, 54, 54)\">{{movie.title}}</h2>
+    {% if movie.backdrop_path is not null %}
         <img  src=\"http://image.tmdb.org/t/p/w1280{{ movie.backdrop_path }}\">
+    {% else %}
+    <img src=\"https://media.koreus.com/201801/maya-chat-drole-tete.jpg\" alt=\"\">
+    {% endif %}
         <h5>
             {{movie.title}} <br>
             Genres: {{movie.genres.0.name}}<br>
-            Date:{{movie.release_date}}
+            Date: {{movie.release_date  | date('d/m/Y')}}<br>
+            Actors: {{credits.cast.0.name}}, {{credits.cast.1.name}}, {{credits.cast.2.name}}
         </h5>
         <hr class=\"my-4\">
         <p>{{movie.overview}}</p>
-        
+        {% if  trailers.youtube.0.source is defined %}
+        <iframe width=\"1280\" height=\"720\"
+            src=\"https://www.youtube.com/embed/{{trailers.youtube.0.source}}\" allowfullscreen>
+        </iframe>
+    {% else %}
+    <p>No Trailer</p>
+    {% endif %}
     
 </div>
-    
-{% endblock %}", "movie/show.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/movie/show.html.twig");
+
+{% endblock %}
+", "movie/show.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/movie/show.html.twig");
     }
 }

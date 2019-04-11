@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerApRmxis\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'ApRmxis',
-    'container.build_id' => '87bad262',
-    'container.build_time' => 1554967066,
+    'container.build_id' => '3ac9303c',
+    'container.build_time' => 1554971177,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerApRmxis');

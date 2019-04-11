@@ -108,21 +108,22 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
         // line 34
         echo "
         </ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <form action=\"\" method=\"post\">
-                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-            </form>
+        <form method=\"post\" action=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
+        echo "\" class=\"form-inline my-2 my-lg-0\">
+            <input class=\"form-control mr-sm-2\" name=\"search\" type=\"text\" placeholder=\"Search\">
+            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
         </form>
     </div>
 </nav>
 
 ";
-        // line 45
+        // line 43
         $this->displayBlock('body', $context, $blocks);
-        // line 46
+        // line 44
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 47
+        // line 45
         echo "</body>
 
 </html>";
@@ -169,7 +170,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     }
 
-    // line 45
+    // line 43
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -186,7 +187,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     }
 
-    // line 46
+    // line 44
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -215,7 +216,7 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
 
     public function getDebugInfo()
     {
-        return array (  190 => 46,  173 => 45,  156 => 7,  138 => 5,  126 => 47,  124 => 46,  122 => 45,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  85 => 23,  83 => 22,  76 => 18,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  191 => 44,  174 => 43,  157 => 7,  139 => 5,  127 => 45,  125 => 44,  123 => 43,  113 => 36,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  85 => 23,  83 => 22,  76 => 18,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -255,11 +256,9 @@ class __TwigTemplate_e72178a6b018d82934dfceabfa0b2b7044f1ab0f26999ec479de427548f
             {% endif %}
 
         </ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <form action=\"\" method=\"post\">
-                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-            </form>
+        <form method=\"post\" action=\"{{ path('search') }}\" class=\"form-inline my-2 my-lg-0\">
+            <input class=\"form-control mr-sm-2\" name=\"search\" type=\"text\" placeholder=\"Search\">
+            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
         </form>
     </div>
 </nav>
