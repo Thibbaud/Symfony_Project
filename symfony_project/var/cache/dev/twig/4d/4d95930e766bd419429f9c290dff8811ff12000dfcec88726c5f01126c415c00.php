@@ -101,7 +101,7 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["upcome"], "poster_path", []), "html", null, true);
             echo "\" alt=\"\">
                                 <div class=\"card-body\">
-                                    <h4 class=\"card-title\" style=\"text-align: center;\">";
+                                    <h4 class=\"card-title font-weight-  bold\" style=\"text-align: center; \">";
             // line 16
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["upcome"], "title", []), "html", null, true);
             echo "</h4>
@@ -178,7 +178,7 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
                         <div class=\"card h-150 mt-3\">
                             <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original{{ upcome.poster_path }}\" alt=\"\">
                                 <div class=\"card-body\">
-                                    <h4 class=\"card-title\" style=\"text-align: center;\">{{ upcome.title }}</h4>
+                                    <h4 class=\"card-title font-weight-  bold\" style=\"text-align: center; \">{{ upcome.title }}</h4>
                                     <h6 style=\"color: blue; text-align: center\">{{ upcome.release_date | date(\"d/m/Y\") }}</h6>
                                     <p class=\"card-text\">{{ upcome.overview | slice(0,100) }}...</p>
                                     <h5 class=\"rating\">Note : {{ upcome.vote_average }}/10</h5>
@@ -194,6 +194,6 @@ class __TwigTemplate_de69d0b93eab46f596c2f5e08a8d72a5f42f36e486cf0ebd7fbbdd6f955
         </div>
     </div>
     <br>
-{% endblock %}", "home/index.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/home/index.html.twig");
+{% endblock %}", "home/index.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/home/index.html.twig");
     }
 }

@@ -64,7 +64,7 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
         // line 4
         echo "
     <div class=\"container mt-5\">
-        <div class=\"row mt-4\">
+        <div class=\"row mt-4 mb-5\">
 
             ";
         // line 8
@@ -73,9 +73,9 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
         foreach ($context['_seq'] as $context["_key"] => $context["top"]) {
             // line 9
             echo "
-                <div class=\"col-sm-3 d-flex\">
+                <div class=\"col-sm-3 d-flex col-lg-3 col-md-6 d-flex\">
                     <div class=\"card border-dark h-150 mt-3\">
-                        <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/w185";
+                        <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original";
             // line 12
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["top"], "poster_path", []), "html", null, true);
             echo "\" alt=\"\">
@@ -145,13 +145,13 @@ class __TwigTemplate_ce864c1c0cc59696c6a661ef1834336c8ca4ffbe699c5d17d60c7241832
 {% block body %}
 
     <div class=\"container mt-5\">
-        <div class=\"row mt-4\">
+        <div class=\"row mt-4 mb-5\">
 
             {% for top in tops.results %}
 
-                <div class=\"col-sm-3 d-flex\">
+                <div class=\"col-sm-3 d-flex col-lg-3 col-md-6 d-flex\">
                     <div class=\"card border-dark h-150 mt-3\">
-                        <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/w185{{ top.poster_path }}\" alt=\"\">
+                        <img class=\"card-img-top\" src=\"http://image.tmdb.org/t/p/original{{ top.poster_path }}\" alt=\"\">
                         <div class=\"card-body\">
                             <h4 class=\"card-title\">{{ top.title }}</h4>
                             <h6>{{ top.release_date|date(\"d/m/Y\") }}</h6>

@@ -17,6 +17,7 @@ class MovieController extends AbstractController
      */
     public function movie(){
 
+
         $token = new ApiToken("d972dbfa37295cd09b02b8019dbd7c70");
         $client = new Client($token);
         $movie = $client->getMoviesApi()->getMovie(550);

@@ -62,80 +62,69 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a>
-    <button class=\"navbar-toggler \" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
     <div class=\"collapse navbar-collapse my-lg-0\" id=\"navbarColor01\">
-        <ul class=\"navbar-nav mr-auto\">
+        <ul class=\"navbar-nav\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 19
+        // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
         echo "\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 22
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bests");
         echo "\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
             </li>
-
+        </ul>
+        <ul class=\"form-inline navbar-nav mr-auto\">
             ";
-        // line 25
+        // line 22
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 26
+            // line 23
             echo "            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-            // line 27
+            // line 24
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
             </li>
                 ";
         } else {
-            // line 30
+            // line 27
             echo "                <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-            // line 31
+            // line 28
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">Inscription</a>
                 </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-            // line 34
+            // line 31
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
             </li>
             ";
         }
-        // line 37
+        // line 34
         echo "
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+            <form action=\"\" method=\"post\">
+                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+            </form>
         </form>
     </div>
 </nav>
 
 ";
-        // line 46
+        // line 45
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 46
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 48
+        // line 47
         echo "</body>
-<footer>
-    <div class=\"jumbotron\">
-        <h1 class=\"display-3\">Made with love</h1>
-        <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class=\"my-4\">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class=\"lead\">
-            <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>
-        </p>
-    </div>
-</footer>
+
 </html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -180,7 +169,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     }
 
-    // line 46
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -197,7 +186,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     }
 
-    // line 47
+    // line 46
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -226,7 +215,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     public function getDebugInfo()
     {
-        return array (  201 => 47,  184 => 46,  167 => 7,  149 => 5,  127 => 48,  125 => 47,  123 => 46,  112 => 37,  106 => 34,  100 => 31,  97 => 30,  91 => 27,  88 => 26,  86 => 25,  80 => 22,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  190 => 46,  173 => 45,  156 => 7,  138 => 5,  126 => 47,  124 => 46,  122 => 45,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  85 => 23,  83 => 22,  76 => 18,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -242,19 +231,16 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 <body>
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary \">
     <a class=\"navbar-brand my-lg-0\" href=\"{{ path('home') }}\">Home</a>
-    <button class=\"navbar-toggler \" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
     <div class=\"collapse navbar-collapse my-lg-0\" id=\"navbarColor01\">
-        <ul class=\"navbar-nav mr-auto\">
+        <ul class=\"navbar-nav\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('bests') }}\">Meilleurs films<span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('bests') }}\">Prochaines sorties<span class=\"sr-only\">(current)</span></a>
             </li>
-
+        </ul>
+        <ul class=\"form-inline navbar-nav mr-auto\">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
@@ -271,7 +257,9 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+            <form action=\"\" method=\"post\">
+                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+            </form>
         </form>
     </div>
 </nav>
@@ -279,21 +267,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
-<<<<<<< HEAD
-</html>", "base.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/base.html.twig");
-=======
-<footer>
-    <div class=\"jumbotron\">
-        <h1 class=\"display-3\">Made with love</h1>
-        <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class=\"my-4\">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class=\"lead\">
-            <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>
-        </p>
-    </div>
-</footer>
+
 </html>", "base.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/base.html.twig");
->>>>>>> 3d81c4ce43bae5a3b92235576a9e3a01fa51e5fe
     }
 }

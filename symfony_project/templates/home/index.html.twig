@@ -13,7 +13,7 @@
                         <div class="card h-150 mt-3">
                             <img class="card-img-top" src="http://image.tmdb.org/t/p/original{{ upcome.poster_path }}" alt="">
                                 <div class="card-body">
-                                    <h4 class="card-title" style="text-align: center;">{{ upcome.title }}</h4>
+                                    <h4 class="card-title font-weight-  bold" style="text-align: center; ">{{ upcome.title }}</h4>
                                     <h6 style="color: blue; text-align: center">{{ upcome.release_date | date("d/m/Y") }}</h6>
                                     <p class="card-text">{{ upcome.overview | slice(0,100) }}...</p>
                                     <h5 class="rating">Note : {{ upcome.vote_average }}/10</h5>

@@ -24,9 +24,11 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/moviz' => [[['_route' => 'one', '_controller' => 'App\\Controller\\MovieController::movie'], null, null, null, false, false, null]],
             '/movie' => [[['_route' => 'movie', '_controller' => 'App\\Controller\\MovieController::index'], null, null, null, false, false, null]],
             '/top' => [[['_route' => 'bests', '_controller' => 'App\\Controller\\MovieController::top'], null, null, null, false, false, null]],
+            '/test' => [[['_route' => 'test', '_controller' => 'App\\Controller\\MovieController::shouldGetVideos'], null, null, null, false, false, null]],
             '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
             '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
             '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, ['GET' => 0], null, false, false, null]],
+            '/admin' => [[['_route' => 'easyadmin', '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\EasyAdminController::indexAction'], null, null, null, true, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
