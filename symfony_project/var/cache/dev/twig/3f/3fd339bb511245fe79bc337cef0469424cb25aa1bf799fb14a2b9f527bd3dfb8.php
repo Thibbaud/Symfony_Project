@@ -64,7 +64,7 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
         // line 4
         echo "
 <div class=\"container mt-3 ml-10\">
-        <h2>";
+        <h2 style=\"color: rgb(167, 54, 54)\">";
         // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 6, $this->source); })()), "title", []), "html", null, true);
         echo "</h2>
@@ -81,15 +81,23 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 10, $this->source); })()), "genres", []), 0, []), "name", []), "html", null, true);
         echo "<br>
-            Date:";
+            Date: ";
         // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 11, $this->source); })()), "release_date", []), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 11, $this->source); })()), "release_date", []), "d/m/Y"), "html", null, true);
+        echo "<br>
+            Actors: ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 12, $this->source); })()), "cast", []), 0, []), "name", []), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 12, $this->source); })()), "cast", []), 1, []), "name", []), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["credits"]) || array_key_exists("credits", $context) ? $context["credits"] : (function () { throw new RuntimeError('Variable "credits" does not exist.', 12, $this->source); })()), "cast", []), 2, []), "name", []), "html", null, true);
         echo "
         </h5>
         <hr class=\"my-4\">
         <p>";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 14, $this->source); })()), "overview", []), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["movie"]) || array_key_exists("movie", $context) ? $context["movie"] : (function () { throw new RuntimeError('Variable "movie" does not exist.', 15, $this->source); })()), "overview", []), "html", null, true);
         echo "</p>
         
     
@@ -116,7 +124,7 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
 
     public function getDebugInfo()
     {
-        return array (  92 => 14,  86 => 11,  82 => 10,  78 => 9,  73 => 7,  69 => 6,  65 => 4,  56 => 3,  27 => 1,);
+        return array (  100 => 15,  90 => 12,  86 => 11,  82 => 10,  78 => 9,  73 => 7,  69 => 6,  65 => 4,  56 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -126,12 +134,13 @@ class __TwigTemplate_fe8bcb1ae70a5d19a43b9f5920b252f4afbabf88bcdd0a4ef6fa8db307e
 {% block body %}
 
 <div class=\"container mt-3 ml-10\">
-        <h2>{{movie.title}}</h2>
+        <h2 style=\"color: rgb(167, 54, 54)\">{{movie.title}}</h2>
         <img  src=\"http://image.tmdb.org/t/p/w1280{{ movie.backdrop_path }}\">
         <h5>
             {{movie.title}} <br>
             Genres: {{movie.genres.0.name}}<br>
-            Date:{{movie.release_date}}
+            Date: {{movie.release_date  | date('d/m/Y')}}<br>
+            Actors: {{credits.cast.0.name}}, {{credits.cast.1.name}}, {{credits.cast.2.name}}
         </h5>
         <hr class=\"my-4\">
         <p>{{movie.overview}}</p>

@@ -3,16 +3,20 @@
 {% block body %}
 
 <div class="container mt-3 ml-10">
-        <h2>{{movie.title}}</h2>
+        <h2 style="color: rgb(167, 54, 54)">{{movie.title}}</h2>
         <img  src="http://image.tmdb.org/t/p/w1280{{ movie.backdrop_path }}">
         <h5>
             {{movie.title}} <br>
             Genres: {{movie.genres.0.name}}<br>
-            Date:{{movie.release_date}}
+            Date: {{movie.release_date  | date('d/m/Y')}}<br>
+            Actors: {{credits.cast.0.name}}, {{credits.cast.1.name}}, {{credits.cast.2.name}}
         </h5>
         <hr class="my-4">
         <p>{{movie.overview}}</p>
-        
+
+         <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/{{trailer.youtube.0.source}}">
+        </iframe>
     
 </div>
     

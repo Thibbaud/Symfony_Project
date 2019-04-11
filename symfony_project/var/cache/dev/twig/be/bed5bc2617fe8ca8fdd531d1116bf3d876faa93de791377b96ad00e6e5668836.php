@@ -125,17 +125,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
         $this->displayBlock('javascripts', $context, $blocks);
         // line 48
         echo "</body>
-<footer>
-    <div class=\"jumbotron\">
-        <h1 class=\"display-3\">Made with love</h1>
-        <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class=\"my-4\">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class=\"lead\">
-            <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>
-        </p>
-    </div>
-</footer>
+
 </html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -226,7 +216,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     public function getDebugInfo()
     {
-        return array (  201 => 47,  184 => 46,  167 => 7,  149 => 5,  127 => 48,  125 => 47,  123 => 46,  112 => 37,  106 => 34,  100 => 31,  97 => 30,  91 => 27,  88 => 26,  86 => 25,  80 => 22,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  191 => 47,  174 => 46,  157 => 7,  139 => 5,  127 => 48,  125 => 47,  123 => 46,  112 => 37,  106 => 34,  100 => 31,  97 => 30,  91 => 27,  88 => 26,  86 => 25,  80 => 22,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -279,21 +269,7 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
-<<<<<<< HEAD
+
 </html>", "base.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/base.html.twig");
-=======
-<footer>
-    <div class=\"jumbotron\">
-        <h1 class=\"display-3\">Made with love</h1>
-        <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class=\"my-4\">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class=\"lead\">
-            <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>
-        </p>
-    </div>
-</footer>
-</html>", "base.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/base.html.twig");
->>>>>>> 3d81c4ce43bae5a3b92235576a9e3a01fa51e5fe
     }
 }
