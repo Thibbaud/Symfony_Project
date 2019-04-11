@@ -215,7 +215,11 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  190 => 46,  173 => 45,  156 => 7,  138 => 5,  126 => 47,  124 => 46,  122 => 45,  109 => 34,  103 => 31,  97 => 28,  94 => 27,  88 => 24,  85 => 23,  83 => 22,  76 => 18,  70 => 15,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+=======
+        return array (  191 => 47,  174 => 46,  157 => 7,  139 => 5,  127 => 48,  125 => 47,  123 => 46,  112 => 37,  106 => 34,  100 => 31,  97 => 30,  91 => 27,  88 => 26,  86 => 25,  80 => 22,  74 => 19,  63 => 11,  58 => 8,  56 => 7,  51 => 5,  45 => 1,);
+>>>>>>> master
     }
 
     public function getSourceContext()
@@ -268,6 +272,10 @@ class __TwigTemplate_46b2d773566fe39cfa8daedeba364dbc87982add52eb4cb094c0ece49f7
 {% block javascripts %}{% endblock %}
 </body>
 
+<<<<<<< HEAD
 </html>", "base.html.twig", "/home/titi/Rendu/symfony_project/symfony_project/templates/base.html.twig");
+=======
+</html>", "base.html.twig", "/home/kylan/Documents/Rendu/symfony_project/symfony_project/templates/base.html.twig");
+>>>>>>> master
     }
 }
