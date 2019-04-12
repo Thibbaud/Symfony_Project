@@ -21,6 +21,9 @@
                             <form action="" method="post">
                             </form>
                             <a href="{{ path('show_movie', {'id': upcome.id } ) }}" class="btn btn-primary">Lire la suite</a>
+                            {% if app.user %}
+                        <a href="{{ path('add_to_lists', {'movie_id': upcome.id } ) }}" class="btn btn-primary">Add</a>
+                        {% endif %}
                         </div>
                     </div>
 
