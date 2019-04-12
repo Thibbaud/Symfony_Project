@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -13,12 +14,34 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+    /**
+     * @param mixed $username
+     */
+    private $username;
 
-    public function __construct()
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
     {
-        //$this->roles = ["ROLE_ADMIN"];
+        $this->username = $username;
     }
 
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $lists
+     */
+    public function setLists($lists)
+    {
+        $this->lists = $lists;
+    }
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -43,14 +66,14 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\OneToMany(targetEntity="App\Entity\Lists", mappedBy="author_id", orphanRemoval=true)
      */
-    private $created_at;
+    private $lists;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $username;
+    public function __construct()
+    {
+        $this->lists = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -130,21 +153,33 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getCreatedAt(): ?DateTimeInterface
+    /**
+     * @return Collection|Lists[]
+     */
+    public function getLists(): Collection
     {
-        return $this->created_at;
+        return $this->lists;
     }
 
-    public function setCreatedAt(DateTimeInterface $created_at): self
+    public function addList(Lists $list): self
     {
-        $this->created_at = $created_at;
+        if (!$this->lists->contains($list)) {
+            $this->lists[] = $list;
+            $list->setAuthorId($this);
+        }
 
         return $this;
     }
 
-    public function setUsername(string $username): self
+    public function removeList(Lists $list): self
     {
-        $this->username = $username;
+        if ($this->lists->contains($list)) {
+            $this->lists->removeElement($list);
+            // set the owning side to null (unless already changed)
+            if ($list->getAuthorId() === $this) {
+                $list->setAuthorId(null);
+            }
+        }
 
         return $this;
     }

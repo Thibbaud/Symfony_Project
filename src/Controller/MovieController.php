@@ -59,7 +59,7 @@ class MovieController extends AbstractController
 
     }
 
-     /**
+    /**
      * @return Response
      * @Route("/moviz", name="one")
      */

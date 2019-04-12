@@ -34,23 +34,23 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-        ->add('Confirm_password', PasswordType::class, [
-        // instead of being set onto the object directly,
-        // this is read and encoded in the controller
-        'mapped' => false,
-        'label' => 'Confirmez votre mot de passe',
-        'constraints' => [
-            new NotBlank([
-                'message' => 'Veuillez confirmer votre mot de passe',
-            ]),
-            new Length([
-                'min' => 6,
-                'minMessage' => 'Your password should be at least {{ limit }} characters',
-                // max length allowed by Symfony for security reasons
-                'max' => 4096,
-            ]),
-        ],
-    ])
+            ->add('Confirm_password', PasswordType::class, [
+                // instead of being set onto the object directly,
+                // this is read and encoded in the controller
+                'mapped' => false,
+                'label' => 'Confirmez votre mot de passe',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez confirmer votre mot de passe',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ]),
+                ],
+            ])
         ;
     }
 
