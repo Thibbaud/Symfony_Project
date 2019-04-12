@@ -10,11 +10,33 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
+ * Class ListsController
+ * @package App\ControllerS
  * @Route("/lists")
  */
 class ListsController extends AbstractController
 {
+
+    /**
+     * @Route("{movie_id}", name="lists")
+     */
+    public function addtolist($movie_id=null)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $list = new Lists();
+
+        $list->setName(intval($movie_id));
+        $list->setAuthorId($this->getUser());
+
+        $entityManager->persist($list);
+        $entityManager->flush();
+
+        return $this->render('lists/index.html.twig', [
+            'movie_id' => $movie_id
+        ]);
+    }
     /**
      * @Route("/", name="lists_index", methods={"GET"})
      */
@@ -93,23 +115,5 @@ class ListsController extends AbstractController
 
         return $this->redirectToRoute('lists_index');
     }
-    /**
-     * @Route("/lists/{movie_id}", name="lists")
-     */
-    public function addtolist($movie_id=null)
-    { 
-        $entityManager = $this->getDoctrine()->getManager();
-        $list = new Lists();
-        
-        $list->setName(intval($movie_id));
-        $list->setAuthorId($this->getUser());
 
-        $entityManager->persist($list);
-        $entityManager->flush();
-
-        return $this->render('lists/index.html.twig', [
-            'controller_name' => 'ListsController',
-            'movie_id' => $movie_id
-        ]);
-    }
 }

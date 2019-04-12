@@ -19,10 +19,9 @@ class ListsRepository extends ServiceEntityRepository
         parent::__construct($registry, Lists::class);
     }
 
-    // /**
-    //  * @return Lists[] Returns an array of Lists objects
-    //  */
-    /*
+    /**
+     * @return Lists[] Returns an array of Lists objects
+     */
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('l')
@@ -34,7 +33,7 @@ class ListsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Lists
@@ -47,4 +46,15 @@ class ListsRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findList(){
+
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.author_id_id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+
+    }
 }

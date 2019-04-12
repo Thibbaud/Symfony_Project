@@ -14,6 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+
     /**
      * @param mixed $username
      */
@@ -73,6 +74,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->lists = new ArrayCollection();
+        $this->roles = ['ROLE_ADMIN'];
     }
 
     public function getId(): ?int
@@ -182,5 +184,11 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->username;
+        // TODO: Implement __toString() method.
     }
 }
